@@ -70,6 +70,39 @@ This section displays a table of all holdings in the portfolio. The table should
 
 We expect you to spend a few hours on this project, but don't worry if you don't finish everything within that timeframe. Please let us know which areas you weren't able to complete and how you plan to finish them if given more time.
 
+## Styling
+
+The project is configured to support SCSS modules and BEM naming convention. 
+
+```scss
+// button.component.scss
+$color: rgba(0, 0, 0, 0.8);
+
+.button { 
+    color: $color; 
+}
+
+.button--primary { ... }
+
+.button__text { ... }
+```
+
+```tsx
+// button.component.tsx
+import { FunctionComponent } from "react";
+import styles from './button.component.scss';
+
+export const Button: FunctionComponent = () => (
+  <button className={styles.button + ' ' + styles.buttonPrimary}>
+    <span className={styles.button__text}>Click me</span>
+  </button>
+);
+```
+
+## Testing
+
+The project is configured to use Jest and React Testing Library. You can run tests with `npm run test`.
+
 ---
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
