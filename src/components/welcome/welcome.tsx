@@ -14,7 +14,7 @@ export const Welcome: FunctionComponent = () => {
       </p>
 
       <Link
-        href="/api/portfolio/1"
+        href="/portfolio/1"
         className={styles.welcome__apiUrl}
         target="_blank"
       >

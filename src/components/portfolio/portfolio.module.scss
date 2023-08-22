@@ -1,0 +1,95 @@
+.header {
+  h1 {
+    padding-bottom: 10px;
+    font-size: medium;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: medium;
+    font-weight: 500;
+  }
+  h3 {
+    font-size: small;
+    font-weight: 600;
+  }
+  width: 75%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  text-align: left;
+  padding: 10px;
+  margin-top: 25px;
+}
+
+.portfolioHoldings {
+  h1 {
+    padding-bottom: 10px;
+    font-size: medium;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: medium;
+    font-weight: 500;
+  }
+  h3 {
+    font-size: small;
+    font-weight: 600;
+  }
+
+  width: 75%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 10px;
+}
+.sections:last-child {
+  border-bottom: none; /* Remove border from the last section */
+}
+.sections {
+  height: 33.33%; /* Set the height of the section */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+.sectors {
+  padding: 0px 10px 10px 0px;
+}
+.sectorList {
+  display: inline-block;
+  padding: 5px 15px 5px 15px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #d8deeb;
+  border-radius: 50px;
+  border: 1px solid #fff;
+  height: 20px;
+}
+
+.table {
+  padding: 10px 0px 10px 0px;
+  width: 100%;
+  @media (max-width: 800px) {
+    width: max-content;
+  }
+  th {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: left;
+    padding: 15px 15px 15px 0px;
+    font-weight: 600;
+    font-size: small;
+  }
+
+  td {
+    text-align: left;
+    padding: 15px 15px 15px 0px;
+    font-size: small;
+    font-weight: normal;
+  }
+}
+.greenText {
+  color: green;
+}
+
+.redText {
+  color: red;
+}
