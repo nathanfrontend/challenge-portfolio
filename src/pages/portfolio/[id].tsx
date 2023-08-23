@@ -3,8 +3,9 @@ import { useRouter } from "next/router";
 import useSwr from "swr";
 import { Portfolio } from "@/models/portfolio";
 import styles from "./portfolio.module.scss";
-import Header from "@/components/portfolio/header";
-import Holdings from "@/components/portfolio/holdings";
+import Header from "@/components/portfolio/header/header";
+import Holdings from "@/components/portfolio/holdings/holdings";
+import NotFound from "@/components/error/notFound";
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const Portfolio = () => {
@@ -15,7 +16,11 @@ const Portfolio = () => {
   );
 
   if (data?.message === "Portfolio not found")
-    return <div>Failed to load portfolio</div>;
+    return (
+      <div className={styles.portfolioContainer}>
+        <NotFound id={query.id} />
+      </div>
+    );
   if (isLoading) return <div>Loading...</div>;
   if (!data) return null;
 
