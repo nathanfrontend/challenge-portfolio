@@ -9,12 +9,13 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const Portfolio = () => {
   const { query } = useRouter();
-  const { data, error, isLoading } = useSwr<Portfolio>(
+  const { data, isLoading } = useSwr<Portfolio>(
     query.id ? `/api/portfolio/${query.id}` : null,
     fetcher,
   );
 
-  if (error) return <div>Failed to load user</div>;
+  if (data?.message === "Portfolio not found")
+    return <div>Failed to load portfolio</div>;
   if (isLoading) return <div>Loading...</div>;
   if (!data) return null;
 
