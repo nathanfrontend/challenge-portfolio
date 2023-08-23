@@ -14,7 +14,7 @@ const Portfolio = () => {
     query.id ? `/api/portfolio/${query.id}` : null,
     fetcher,
   );
-
+  //ran out of time for fixing this static type on id prop
   if (data?.message === "Portfolio not found")
     return (
       <div className={styles.portfolioContainer}>
