@@ -1,15 +1,26 @@
-import { render, screen } from "@testing-library/react";
+import { getAllByTestId, render, screen, within } from "@testing-library/react";
 import Holdings from "@/components/portfolio/holdings";
+import { TokenList } from "./tokenList";
+import { JOHNS_PORTFOLIO } from "@/mocks/portfolio.mocks";
 
 describe(Holdings.name, () => {
   it("should load Holding ", () => {
-    //With more time i wouldve mocked this component and tested the props were passed down successfully
-    // code currently has an error boundary though to avoid this page in general loading if api call fails
-    // needs typescript fix
-    render(<Holdings />);
+    render(<Holdings data={JOHNS_PORTFOLIO} />);
     const linkElement = screen.getByRole("heading", {
       name: "Sectors:",
     });
     expect(linkElement).toBeInTheDocument();
+  });
+
+  it("should render 4 list items ", () => {
+    // using the api data as mock data to provide my component with props
+    render(<TokenList data={JOHNS_PORTFOLIO} />);
+
+    const list = screen.getByRole("list", {
+      name: /tokens/i,
+    });
+    const listitems = screen.getAllByRole("listitem");
+
+    expect(listitems.length).toBe(4);
   });
 });

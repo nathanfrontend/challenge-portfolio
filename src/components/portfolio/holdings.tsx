@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./portfolio.module.scss";
 import { Portfolio } from "@/models/portfolio";
+import { TokenList } from "./tokenList";
 type Data = {
   data: Portfolio;
 };
@@ -13,12 +14,7 @@ const Holdings = ({ data }: Data) => {
       <div className={styles.sections}>
         <h2>Sectors:</h2>
         <div className={styles.sectors}>
-          {data?.holdings.map(({ sector, lastPrice }) => (
-            //using last price as a key due to duplicate id issues, ideally would have a unique key sent via api
-            <span key={lastPrice} className={styles.sectorList}>
-              {sector.name}
-            </span>
-          ))}
+          <TokenList data={data} />
         </div>
       </div>
       <div className={styles.sections}>

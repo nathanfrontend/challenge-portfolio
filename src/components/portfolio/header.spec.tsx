@@ -1,12 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import Header from "@/components/portfolio/header";
+import { JOHNS_PORTFOLIO } from "../../mocks/portfolio.mocks";
 
 describe(Header.name, () => {
   it("should load header name", () => {
-    //With more time i wouldve mocked this component and tested the props were passed down successfully
-    // code currently has an error boundary though to avoid this page in general loading if api call fails
-    // needs typescript fix
-    render(<Header />);
+    render(<Header data={JOHNS_PORTFOLIO} />);
     const linkElement = screen.getByRole("heading", {
       name: "Valuation",
     });
