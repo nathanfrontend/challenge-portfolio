@@ -11,3 +11,7 @@ describe(Header.name, () => {
     expect(linkElement).toBeInTheDocument();
   });
 });
+//Todo
+// need to finish testing the calculation for the header, ensuring the pence is correct, isnt rounding up
+// testing accessibility
+//Api calls formatting

@@ -24,3 +24,8 @@ describe(Holdings.name, () => {
     expect(listitems.length).toBe(4);
   });
 });
+
+//Todo
+// Test locale formatting
+//Test Currency formatting
+//Testing Conditional css colours
