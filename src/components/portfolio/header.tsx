@@ -6,7 +6,7 @@ type Data = {
 };
 const Header = ({ data }: Data) => {
   const CalculateValuation = () => {
-    const totalSum = data.holdings.reduce(
+    const totalSum = data?.holdings.reduce(
       (
         accumulator: number,
         currentObject: { shares: number; lastPrice: number },
@@ -30,7 +30,7 @@ const Header = ({ data }: Data) => {
 
   return (
     <div className={styles.header}>
-      <h1>{data.name}</h1>
+      <h1>{data?.name}</h1>
       <h2> Valuation </h2>
       <CalculateValuation />
     </div>
